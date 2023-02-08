@@ -1,19 +1,12 @@
-"strict";
-
 import Head from "next/head";
 
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
-import React, { useState } from "react";
-//import init, {  ttest } from "wasm_bf_robust";
 
-const inter = Inter({ subsets: ["latin"] });
 import {useContext} from "react";
 import { WASMContext } from "../context/WASM";
-
-
-/* let wasm_loaded: boolean = false; */
-export default function Home() {
+/* import init, {  ttest } from "wasm_bf_robust"; */
+export default function NewPage() {
 
   const  wasm  = useContext(WASMContext);
   if (!wasm.wasm) {
@@ -36,4 +29,5 @@ export default function Home() {
       </main>
     </>
   );
+
 }
