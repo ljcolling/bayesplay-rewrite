@@ -22,7 +22,7 @@ export const WASMContext = createContext<IWASMContext>(initial);
 export const WASMContextProvider: React.FC<WASMContextProvider> = ({
   children
 }) => {
-  const [state, setState] = useState<IWASMContext>(initial);
+  const [state, setState] = useState<any>(initial);
 
   useMountEffectOnce(() => {
     (async () => {
@@ -38,9 +38,10 @@ export const WASMContextProvider: React.FC<WASMContextProvider> = ({
   )
 }
 
-/* interface IWASMContext { */
-/*   wasm?: typeof import("../../wasm"); */
-/* } */
+ interface IWASMContext { 
+   wasm?: any;
+  ttest?: any;
+ } 
 
 interface WASMContextProvider {
   children: ReactNode;
